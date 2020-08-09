@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "436120123475",
+    "firebase_url": "https://raztacualzajava.firebaseio.com",
+    "project_id": "raztacualzajava",
+    "storage_bucket": "raztacualzajava.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436120123475:android:6ee24584868cb07b27aea6",
+        "android_client_info": {
+          "package_name": "com.swout.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436120123475-0osjan4813hv95j6f4tmmq1eafoo4n8f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.swout.myapplication",
+            "certificate_hash": "ca33f922264efdc26ec866367ad301b45ed48414"
+          }
+        },
+        {
+          "client_id": "436120123475-fenrhsm0k1hqr2irpj6b720lp31n6rf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwC99krLvLZgslQjJrenZaiRabzml2Vsg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436120123475-fenrhsm0k1hqr2irpj6b720lp31n6rf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
