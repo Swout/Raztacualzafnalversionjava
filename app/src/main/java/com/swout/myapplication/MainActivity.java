@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private ViewPager myViewPager;
     private TabLayout myTableLayout;
-
+    private TabsAccessorAdapter myTabsAccessorAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,13 @@ public class MainActivity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Rastacualza");
+
+        myViewPager = (ViewPager) findViewById(R.id.main_tabs_pager);
+        myTabsAccessorAdapter = new TabsAccessorAdapter(getSupportFragmentManager());
+        myViewPager.setAdapter(myTabsAccessorAdapter);
+
+        myTableLayout = (TabLayout) findViewById(R.id.main_tabs);
+        myTableLayout.setupWithViewPager(myViewPager);
     }
 
 
