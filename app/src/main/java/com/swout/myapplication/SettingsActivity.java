@@ -62,7 +62,7 @@ public class SettingsActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                        if((snapshot.exists())&&(snapshot.hasChild("name"))&&(snapshot.hasChild("image"))){
+                        if((snapshot.exists())&&(snapshot.hasChild("name")&&(snapshot.hasChild("image")))){
 
                             String retriveUserName = snapshot.child("name").getValue().toString();
                             String retriveStatus = snapshot.child("status").getValue().toString();
@@ -77,7 +77,6 @@ public class SettingsActivity extends AppCompatActivity {
 
                             String retriveUserName = snapshot.child("name").getValue().toString();
                             String retriveStatus = snapshot.child("status").getValue().toString();
-                            String retriveProfileImage = snapshot.child("image").getValue().toString();
 
                             userName.setText(retriveUserName);
                             userStatus.setText(retriveStatus);
