@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 
 
 public class GroupChatActivity extends AppCompatActivity {
@@ -47,4 +47,5 @@ public class GroupChatActivity extends AppCompatActivity {
         displayTextMessages = (TextView) findViewById(R.id.group_chat_text_display);
         mScrollView = (ScrollView) findViewById(R.id.my_scroll_view);
     }
+
 }
