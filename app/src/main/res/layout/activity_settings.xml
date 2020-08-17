@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/set_profile_status"
         android:inputType="textMultiLine"
-        android:hint="Hey, I am Online Now"
+        android:hint="Update Profile"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"

@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void VerifyUserExistance() {
         String CurrentUserId = mAuth.getCurrentUser().getUid();
-        Rootref.child(CurrentUserId).addValueEventListener(new ValueEventListener() {
+        Rootref.child("Users").child(CurrentUserId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.child("name").exists()){
