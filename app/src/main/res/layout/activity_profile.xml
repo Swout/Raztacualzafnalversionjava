@@ -51,14 +51,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/visit_user_status"
-        android:layout_marginTop="6dp"
         android:layout_marginLeft="65dp"
+        android:layout_marginTop="6dp"
         android:layout_marginRight="65dp"
-        android:textColor="@drawable/buttons"
-        android:textStyle="bold"
-        android:textSize="20dp"
         android:text="Send Message"
-        android:textAllCaps="false"
-        tools:ignore="HardcodedText,SpUsage" />
+        android:textColor="@color/colorPrimary"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:textCursorDrawable="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+    <Button
+        android:id="@+id/decline_message_request_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/send_message_request_button"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="65dp"
+        android:text="Cancel Chat Request"
+        android:textColor="@color/colorPrimary"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:textCursorDrawable="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
 
 </RelativeLayout>
