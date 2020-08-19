@@ -40,7 +40,7 @@ public class ChatsFragment extends Fragment {
     private DatabaseReference ChatsRef,UserRef;
     private FirebaseAuth mAuth;
     private String currentUserId;
-    private String retImage = "default_image";
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -113,6 +113,7 @@ public class ChatsFragment extends Fragment {
                     @Override
                     protected void onBindViewHolder(@NonNull final ChatsViewHolder holder, int position, @NonNull Contacts model) {
                         final String usersIds = getRef(position).getKey();
+                        final String[] retImage = {"default_image"};
 
                         UserRef.child(usersIds).addValueEventListener(new ValueEventListener() {
                             @Override
@@ -121,8 +122,8 @@ public class ChatsFragment extends Fragment {
                                 if(snapshot.exists())
                                 {
                                     if(snapshot.hasChild("image")){
-                                        retImage = snapshot.child("image").getValue().toString();
-                                        Picasso.get().load(retImage).into(holder.profileImage);
+                                        retImage[0] = snapshot.child("image").getValue().toString();
+                                        Picasso.get().load(retImage[0]).into(holder.profileImage);
                                     }
 
                                     final String retName = snapshot.child("name").getValue().toString();
@@ -137,7 +138,7 @@ public class ChatsFragment extends Fragment {
                                             Intent chatIntent = new Intent(getContext(),ChatActivity.class);
                                             chatIntent.putExtra("visit_user_id",usersIds);
                                             chatIntent.putExtra("visit_user_name",retName);
-                                            chatIntent.putExtra("visit_image",retImage);
+                                            chatIntent.putExtra("visit_image", retImage[0]);
                                             startActivity(chatIntent);
                                         }
                                     });
