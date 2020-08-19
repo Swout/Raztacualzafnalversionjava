@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -45,6 +46,7 @@ public class SettingsActivity extends AppCompatActivity {
     private DatabaseReference RootRef;
     private StorageReference UserProfileImageRef;
     private ProgressDialog loadingBar;
+    private Toolbar SettingsToolBar;
 
     private static final int GalleryPick = 1;
 
@@ -175,6 +177,12 @@ public class SettingsActivity extends AppCompatActivity {
         userStatus = (EditText) findViewById(R.id.set_profile_status);
         userProfileImage = (CircleImageView) findViewById(R.id.profile_image);
         loadingBar = new ProgressDialog(this);
+
+        SettingsToolBar = (Toolbar) findViewById(R.id.settings_toolbar);
+        setSupportActionBar(SettingsToolBar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle("Account Settings");
     }
 
 
