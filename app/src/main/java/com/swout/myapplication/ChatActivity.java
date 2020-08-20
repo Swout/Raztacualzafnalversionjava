@@ -119,13 +119,14 @@ public class ChatActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
-        RootRef.child("Messages").child(messageReceiverID).child(messageReceiverID)
+        RootRef.child("Message").child(messageSenderId).child(messageReceiverID)
                 .addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                         Messages messages = snapshot.getValue(Messages.class);
                         messagesList.add(messages);
                         messageAdapter.notifyDataSetChanged();
+                        userMessagesList.smoothScrollToPosition(userMessagesList.getAdapter().getItemCount());
 
                     }
 
@@ -162,7 +163,7 @@ public class ChatActivity extends AppCompatActivity
             String messageSenderRef = "Message/" + messageSenderId + "/"+ messageReceiverID;
             String messageReceiverRef = "Message/" + messageReceiverID  + "/"+messageSenderId ;
 
-            DatabaseReference userMessageKeyRef = RootRef.child("Messages")
+            DatabaseReference userMessageKeyRef = RootRef.child("Message")
                     .child(messageSenderRef).child(messageReceiverRef).push();
 
             String messagePushId = userMessageKeyRef.getKey();

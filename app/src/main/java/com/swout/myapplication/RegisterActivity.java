@@ -20,6 +20,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class RegisterActivity extends AppCompatActivity {
     private Button CreateAccountButton;
@@ -76,8 +77,13 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
 
+                            String diviceToken = FirebaseInstanceId.getInstance().getToken();
+
                             String currentUserId = mAuth.getCurrentUser().getUid();
                             RootRef.child("Users").child(currentUserId).setValue("");
+
+                            RootRef.child("Users").child(currentUserId).child("device_token")
+                                    .setValue(diviceToken);
                             SendUserToMainActivity();
                             Toast.makeText(RegisterActivity.this,"Account Create Successfully..",Toast.LENGTH_SHORT).show();
                             LoadingBar.dismiss();
